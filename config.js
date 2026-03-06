@@ -1,0 +1,1 @@
+window.__ARENA_API_BASE__ = "http://127.0.0.1:8765";

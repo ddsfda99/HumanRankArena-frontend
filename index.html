@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HumanRank Arena</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Task List">
+        <div class="brand">HumanRank Arena</div>
+        <nav class="task-nav">
+          <button class="task-item is-active" data-task="math" type="button">Math</button>
+          <button class="task-item" data-task="qa" type="button">Q&amp;A</button>
+          <button class="task-item" data-task="coding" type="button">Coding</button>
+          <button class="task-item" data-task="image" type="button">Text-to-Image</button>
+        </nav>
+      </aside>
+
+      <main class="content-wrap">
+        <section class="task-panel is-active" data-task="math" data-task-type="text">
+          <header class="arena-header">
+            <h1>Math Battle</h1>
+            <p class="subtitle">Enter a math problem, run two models, and compare their answers.</p>
+          </header>
+
+          <section class="prompt-panel">
+            <label for="problemMath">Problem</label>
+            <textarea id="problemMath" class="prompt-input text-problem-input" rows="4" placeholder="Enter a math problem...">Compute the definite integral: integral from 0 to 1 of (3x^2 + 2x) dx.</textarea>
+            <p class="hint">Models are randomly selected for each generation.</p>
+            <div class="prompt-actions">
+              <button class="generate-btn text-generate-btn" type="button">Generate Answers</button>
+              <p class="hint">Tip: press <kbd>A</kbd> or <kbd>B</kbd> to vote. Press <kbd>Ctrl/Cmd</kbd> + <kbd>Enter</kbd> to generate.</p>
+            </div>
+          </section>
+
+          <section class="battlefield" aria-label="Math battle area">
+            <article class="candidate" data-id="A">
+              <div class="candidate-top">
+                <span class="badge">Candidate A</span>
+                <span class="model-name" data-model-name="A">Random</span>
+              </div>
+              <div class="response-content text-response" data-answer="A">
+                <p class="placeholder-text">Click "Generate Answers" to run the selected models.</p>
+              </div>
+              <button class="vote-btn" data-vote="A">Choose A</button>
+            </article>
+
+            <div class="vs">VS</div>
+
+            <article class="candidate" data-id="B">
+              <div class="candidate-top">
+                <span class="badge">Candidate B</span>
+                <span class="model-name" data-model-name="B">Random</span>
+              </div>
+              <div class="response-content text-response" data-answer="B">
+                <p class="placeholder-text">Click "Generate Answers" to run the selected models.</p>
+              </div>
+              <button class="vote-btn" data-vote="B">Choose B</button>
+            </article>
+          </section>
+
+          <section class="result" aria-live="polite">
+            <p>No selection yet.</p>
+          </section>
+        </section>
+
+        <section class="task-panel" data-task="qa" data-task-type="text">
+          <header class="arena-header">
+            <h1>Q&amp;A Battle</h1>
+            <p class="subtitle">Enter a question and compare two models side by side.</p>
+          </header>
+
+          <section class="prompt-panel">
+            <label for="problemQa">Problem</label>
+            <textarea id="problemQa" class="prompt-input text-problem-input" rows="4" placeholder="Enter a question...">Why do we not have a solar eclipse every month?</textarea>
+            <p class="hint">Models are randomly selected for each generation.</p>
+            <div class="prompt-actions">
+              <button class="generate-btn text-generate-btn" type="button">Generate Answers</button>
+              <p class="hint">Tip: press <kbd>A</kbd> or <kbd>B</kbd> to vote. Press <kbd>Ctrl/Cmd</kbd> + <kbd>Enter</kbd> to generate.</p>
+            </div>
+          </section>
+
+          <section class="battlefield" aria-label="Q and A battle area">
+            <article class="candidate" data-id="A">
+              <div class="candidate-top">
+                <span class="badge">Candidate A</span>
+                <span class="model-name" data-model-name="A">Random</span>
+              </div>
+              <div class="response-content text-response" data-answer="A">
+                <p class="placeholder-text">Click "Generate Answers" to run the selected models.</p>
+              </div>
+              <button class="vote-btn" data-vote="A">Choose A</button>
+            </article>
+
+            <div class="vs">VS</div>
+
+            <article class="candidate" data-id="B">
+              <div class="candidate-top">
+                <span class="badge">Candidate B</span>
+                <span class="model-name" data-model-name="B">Random</span>
+              </div>
+              <div class="response-content text-response" data-answer="B">
+                <p class="placeholder-text">Click "Generate Answers" to run the selected models.</p>
+              </div>
+              <button class="vote-btn" data-vote="B">Choose B</button>
+            </article>
+          </section>
+
+          <section class="result" aria-live="polite">
+            <p>No selection yet.</p>
+          </section>
+        </section>
+
+        <section class="task-panel" data-task="coding" data-task-type="text">
+          <header class="arena-header">
+            <h1>Coding Battle</h1>
+            <p class="subtitle">Enter a coding task and compare generated solutions.</p>
+          </header>
+
+          <section class="prompt-panel">
+            <label for="problemCoding">Problem</label>
+            <textarea id="problemCoding" class="prompt-input text-problem-input" rows="4" placeholder="Enter a coding prompt...">Implement two_sum(nums, target) in Python and return two different indices.</textarea>
+            <p class="hint">Models are randomly selected for each generation.</p>
+            <div class="prompt-actions">
+              <button class="generate-btn text-generate-btn" type="button">Generate Answers</button>
+              <p class="hint">Tip: press <kbd>A</kbd> or <kbd>B</kbd> to vote. Press <kbd>Ctrl/Cmd</kbd> + <kbd>Enter</kbd> to generate.</p>
+            </div>
+          </section>
+
+          <section class="battlefield" aria-label="Coding battle area">
+            <article class="candidate" data-id="A">
+              <div class="candidate-top">
+                <span class="badge">Candidate A</span>
+                <span class="model-name" data-model-name="A">Random</span>
+              </div>
+              <div class="response-content text-response" data-answer="A">
+                <p class="placeholder-text">Click "Generate Answers" to run the selected models.</p>
+              </div>
+              <button class="vote-btn" data-vote="A">Choose A</button>
+            </article>
+
+            <div class="vs">VS</div>
+
+            <article class="candidate" data-id="B">
+              <div class="candidate-top">
+                <span class="badge">Candidate B</span>
+                <span class="model-name" data-model-name="B">Random</span>
+              </div>
+              <div class="response-content text-response" data-answer="B">
+                <p class="placeholder-text">Click "Generate Answers" to run the selected models.</p>
+              </div>
+              <button class="vote-btn" data-vote="B">Choose B</button>
+            </article>
+          </section>
+
+          <section class="result" aria-live="polite">
+            <p>No selection yet.</p>
+          </section>
+        </section>
+
+        <section class="task-panel" data-task="image" data-task-type="image">
+          <header class="arena-header">
+            <h1>Text-to-Image Battle</h1>
+            <p class="subtitle">Compare outputs and pick the better image.</p>
+          </header>
+
+          <section class="prompt-panel">
+            <label for="imagePrompt">Prompt</label>
+            <textarea id="imagePrompt" class="prompt-input" rows="3">A cinematic sci-fi city street at sunset, reflective wet road, neon signs, 35mm film look</textarea>
+            <p class="hint">Image models are randomly selected for each generation.</p>
+            <div class="prompt-actions">
+              <button id="imageGenerateBtn" class="generate-btn" type="button">Generate New Pair</button>
+              <p class="hint">Tip: press <kbd>A</kbd> or <kbd>B</kbd> to vote quickly.</p>
+            </div>
+          </section>
+
+          <section class="battlefield" aria-label="Image battle area">
+            <article class="candidate" data-id="A">
+              <div class="candidate-top">
+                <span class="badge">Candidate A</span>
+                <span class="model-name" data-image-model-name="A">Random</span>
+              </div>
+              <img src="assets/candidate-a.svg" alt="Candidate image A" />
+              <button class="vote-btn" data-vote="A">Choose A</button>
+            </article>
+
+            <div class="vs">VS</div>
+
+            <article class="candidate" data-id="B">
+              <div class="candidate-top">
+                <span class="badge">Candidate B</span>
+                <span class="model-name" data-image-model-name="B">Random</span>
+              </div>
+              <img src="assets/candidate-b.svg" alt="Candidate image B" />
+              <button class="vote-btn" data-vote="B">Choose B</button>
+            </article>
+          </section>
+
+          <section class="result" aria-live="polite">
+            <p>Click "Generate New Pair" to create images from the prompt.</p>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
